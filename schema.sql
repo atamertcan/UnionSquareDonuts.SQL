@@ -3,6 +3,7 @@
 -- Some of the typical ingredients we use include flour, yeast, oil, butter, and several different types of sugar.
 -- Moreover, we would love to keep track of the price we pay per unit of ingredient (whether it’s pounds, grams, etc.).
 
+
 CREATE TABLE "ingredients" (
     "id" INTEGER,
     "name" TEXT NOT NULL,
@@ -10,6 +11,7 @@ CREATE TABLE "ingredients" (
     "unit" TEXT NOT NULL,
     PRIMARY KEY ("id")
 );
+
 
 -- Donuts
 -- We’ll need to include our selection of donuts, past and present!
@@ -29,6 +31,7 @@ CREATE TABLE "donuts" (
 
 );
 
+
 CREATE TABLE "donut_ingredients" (
     "donut_id" INTEGER,
     "ingredient_id" INTEGER,
@@ -37,6 +40,7 @@ CREATE TABLE "donut_ingredients" (
     PRIMARY KEY ("donut_id", "ingredient_id")
 
 );
+
 
 -- Orders
 -- We love to see customers in person, though we realize a good number of people might order online nowadays.
@@ -55,19 +59,6 @@ CREATE TABLE "orders" (
 
 );
 
--- Customers
--- Oh, and we realize it would be lovely to keep track of some information about each of our customers.
--- We’d love to remember the history of the orders they’ve made. In that case, we think we should store:
---     * A customer’s first and last name
---     * A history of their orders
-
-CREATE TABLE "customers" (
-    "id" INTEGER,
-    "first_name" TEXT NOT NULL,
-    "last_name" TEXT NOT NULL,
-    PRIMARY KEY("id")
-
-);
 
 CREATE TABLE "order_contents" (
     "customer_id" INTEGER,
@@ -78,5 +69,21 @@ CREATE TABLE "order_contents" (
     FOREIGN KEY ("customer_id") REFERENCES "customers"("id"),
     FOREIGN KEY ("donut_id") REFERENCES "donuts"("id"),
     FOREIGN KEY ("order_id") REFERENCES "orders"("id")
+
+);
+
+
+-- Customers
+-- Oh, and we realize it would be lovely to keep track of some information about each of our customers.
+-- We’d love to remember the history of the orders they’ve made. In that case, we think we should store:
+--     * A customer’s first and last name
+--     * A history of their orders
+
+
+CREATE TABLE "customers" (
+    "id" INTEGER,
+    "first_name" TEXT NOT NULL,
+    "last_name" TEXT NOT NULL,
+    PRIMARY KEY("id")
 
 );
