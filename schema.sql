@@ -32,3 +32,11 @@ CREATE TABLE "orders" (
     FOREIGN KEY ("customer_id") REFERENCES "customers"("id")
 
 );
+
+CREATE TABLE "customers" (
+    "id" INTEGER,
+    "first_name" TEXT NOT NULL,
+    "last_name" TEXT NOT NULL,
+    PRIMARY KEY("id")
+
+);
