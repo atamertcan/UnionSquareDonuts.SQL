@@ -14,3 +14,12 @@ CREATE TABLE "donuts" (
     PRIMARY KEY ("id")
 
 );
+
+CREATE TABLE "donut_ingredients" (
+    "donut_id" INTEGER,
+    "ingredient_id" INTEGER,
+    FOREIGN KEY ("donut_id") REFERENCES "donuts"("id"),
+    FOREIGN KEY ("ingredient_id") REFERENCES "ingredients"("id"),
+    PRIMARY KEY ("donut_id", "ingredient_id")
+
+);
