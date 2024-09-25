@@ -38,6 +38,14 @@ CREATE TABLE "donut_ingredients" (
 
 );
 
+-- Orders
+-- We love to see customers in person, though we realize a good number of people might order online nowadays.
+-- We’d love to be able to keep track of those online orders. We think we would need to store:
+--     * An order number, to keep track of each order internally
+--     * All the donuts in the order
+--     * The customer who placed the order. We suppose we could assume only one customer places any given order.
+
+
 CREATE TABLE "orders" (
     "id" INTEGER,
     "customer_id" INTEGER,
