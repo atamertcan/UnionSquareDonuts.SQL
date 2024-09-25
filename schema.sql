@@ -40,3 +40,15 @@ CREATE TABLE "customers" (
     PRIMARY KEY("id")
 
 );
+
+CREATE TABLE "order_contents" (
+    "customer_id" INTEGER,
+    "donut_id" INTEGER,
+    "order_id" INTEGER,
+    "qty" INTEGER,
+    PRIMARY KEY ("order_id", "donut_id", "customer_id"),
+    FOREIGN KEY ("customer_id") REFERENCES "customers"("id"),
+    FOREIGN KEY ("donut_id") REFERENCES "donuts"("id"),
+    FOREIGN KEY ("order_id") REFERENCES "orders"("id")
+
+);
