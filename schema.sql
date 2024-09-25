@@ -47,6 +47,12 @@ CREATE TABLE "orders" (
 
 );
 
+-- Customers
+-- Oh, and we realize it would be lovely to keep track of some information about each of our customers.
+-- We’d love to remember the history of the orders they’ve made. In that case, we think we should store:
+--     * A customer’s first and last name
+--     * A history of their orders
+
 CREATE TABLE "customers" (
     "id" INTEGER,
     "first_name" TEXT NOT NULL,
